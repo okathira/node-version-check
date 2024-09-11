@@ -1,0 +1,10 @@
+{
+  "github.copilot.enable": {
+    "markdown": true
+  },
+  "github.copilot.chat.experimental.temporalContext.enabled": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.chat.runCommand.enabled": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true
+}

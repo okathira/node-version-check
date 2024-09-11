@@ -1,6 +1,6 @@
 # #!/usr/bin/env pwsh
 # # $basedir を nodejsがインストールされている場所に合わせてデバッグしてみる
-# # $basedir=Split-Path $MyInvocation.MyCommand.Definition -Parent 
+# $basedir=Split-Path $MyInvocation.MyCommand.Definition -Parent 
 # $basedir=$env:NVM_SYMLINK
 
 # $exe=""
@@ -32,10 +32,14 @@
 $exe=""
 # $exe=".exe"
 
-$basedir=$env:NVM_SYMLINK
+$basedir=(get-command yarn).Path | Split-Path -Parent
+
+Write-Output "start"
 
 if ($MyInvocation.ExpectingInput) {
-  $input | & "node$exe"  "$basedir/node_modules/yarn/bin/yarn.js" $args
+  $input | & "$basedir/node$exe"  "$basedir/node_modules/yarn/bin/yarn.js" $args
 } else {
-  & "node$exe"  "$basedir/node_modules/yarn/bin/yarn.js" $args
+  & "$basedir/node$exe"  "$basedir/node_modules/yarn/bin/yarn.js" $args
 }
+
+Write-Output "end"

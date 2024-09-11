@@ -1,5 +1,3 @@
-#!/usr/bin/env cmd
-
 console.log(process.version);
 console.log(__dirname);
 console.log(process.execPath);

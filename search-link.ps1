@@ -1,3 +1,0 @@
-Get-ChildItem -Path C:\ -Recurse -Attributes Directory | Where-Object { $_.Mode -match 'l' } > "./searched-links/C" 3>./searched-links/Cwarn 2>./searched-links/Cerror
-Get-ChildItem -Path D:\ -Recurse -Attributes Directory | Where-Object { $_.Mode -match 'l' } > "./searched-links/D" 3>./searched-links/Dwarn 2>./searched-links/Derror
-Get-ChildItem -Path G:\ -Recurse -Attributes Directory | Where-Object { $_.Mode -match 'l' } > "./searched-links/G" 3>./searched-links/Gwarn 2>./searched-links/Gerror
